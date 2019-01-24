@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>index page demo</title>
-</head>
+{(head.html)}
 <body>
-    {{message}}
+    <div id="index_usertitle"></div>
+    <h1  class="center_content">{{message}}</h1>
     {*jquery*}
     <script >
+       window.userinfo = {* json.encode({name="dalong",age=444}) *}
+    </script>
+    <script >
         $(document).ready(function(){
-            alert("is ok")
+             var el = $("#index_usertitle")
+             el.html(`<div>${userinfo.name}</div>`)
+             el.css("text-align","center")
         })
     </script>
 </body>
